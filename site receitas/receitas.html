@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estrutura Modelo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+   </head>
+
+  <body>
+    <header>
+      <div class="dropdown">
+        <button id="dropbutton">Receitas</button>
+        <div class="dropdown-content">
+          <a href="#Maminha Assada">Maminha</a> 
+          <a href="#Feijoada">Feijoada</a>
+          <a href="#Arroz de Carreteiro">Arroz de Carreteiro</a>
+          <a href="#Calça Virada">Calça Virada</a>
+          <a href="#Pé de Moleque">Pé de Moleque</a>
+          <a href="#Cuca">Cuca</a>
+        </div>
+      </div>
+      <h1 class="tituloProjeto">Livro de Receitas</h1>
+      <div class="search-bar">
+         <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+          rel="stylesheet"
+        />
+        <input type="text" class="search-input" placeholder="Pesquisar..." />
+        <button class="fa fa-search" type="submit"></button>
+      </div>
+    </header>
+
+    <section>
+      <div id="receitas-container"></div>
+      <button id="home" onclick="voltarPaginaInicial()">Voltar à página inicial</button>
+    </section>
+    <footer>
+      <p>&copy;Fernando de Souza</p>
+    </footer>
+  </body>
+</html>

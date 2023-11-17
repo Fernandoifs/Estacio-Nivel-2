@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  align-items: center;
+}
+
+.search-bar {
+  width: 500px;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.search-input {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.tituloProjeto {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.dropdown {
+  padding-left: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #c7d8f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+button {
+  background-color: #ffa600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ff7b00;
+}
+.search-bar button {
+  width: 38px; 
+  height: 38px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+section {
+  background-color: rgba(185, 162, 110, 0.692);
+  padding: 50px;
+}
+
+#receitas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.receita {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ffca98;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  
+}
+
+.receita h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.receita img {
+  margin: 0 auto;
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.receita h4 {
+  margin-bottom: 1px;
+}
+.receita ul {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.receita ul li {
+  margin-left: 15px;
+  padding: 3px;
+}
+
+.receita p {
+  padding-left: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  font-style: italic;
+  padding: 1px;
+}

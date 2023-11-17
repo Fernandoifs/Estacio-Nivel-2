@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar à Lista</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    h1 {
+      color: white;
+    }
+
+    section {
+      background-color: #509ba7;
+      width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    div {
+      width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    input {
+      padding: 8px;
+    }
+
+    select {
+      padding: 8px;
+      width: 189px;
+      color: #747272;
+    }
+
+    .botao {
+      border: none;
+      color: white;
+      padding: 8px;
+      width: 120px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px 5px 5px 0px;
+    }
+
+    .adicione {
+      background-color: #4CAF50;
+    }
+
+    .adicione:hover {
+      background-color: #406e41;
+    }
+
+    .ordene {
+      background-color: #2196F3;
+    }
+
+    .ordene:hover {
+      background: #2c6391;
+    }
+
+    .embaralhe {
+      background-color: #adaaaa;
+    }
+
+    .embaralhe:hover {
+      background: #6e6c68;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div>
+      <h1>Lista de Valores</h1>
+
+      <input type="number" id="valorInput" placeholder="Insira um valor">
+      <button class="botao adicione" id="buttonAdicionar" onclick="adicionar()">Adicionar</button>
+
+      <select id="opcoesOrdenar">
+        <option value=1>Bubble Sort</option>
+        <option value=2>Quick Sort</option>
+        <option value=3>Selection Sort</option>
+      </select>
+
+      <button class="botao ordene" id="buttonOrdenar" onclick="ordenar()">Ordenar</button>
+
+    </div>
+    <div>
+      <button class="botao embaralhe" onclick="embaralhar()">Embaralhar</button>
+    </div>
+    <div style="display: -webkit-box;margin-top: 50px;">
+
+      <ul id="listaOriginal" style="margin-right: 100px;">Lista Original</ul>
+
+    </div>
+
+  </section>
+  <script>
+    document.getElementById("buttonAdicionar").addEventListener("click", () => {
+      document.getElementById("valorInput").focus();
+    });
+
+    document.getElementById("buttonOrdenar").addEventListener("click", () => {
+      document.getElementById("valorInput").focus();
+    });
+
+    //adicionando com enter
+    window.addEventListener("keypress", (e) => {
+      if (e.keyCode === 13) {
+        adicionar();
+      }
+    });
+
+    let listaValoresAdicionados = [];
+
+    function adicionar() {
+      let valorInformado = document.getElementById("valorInput").value;
+
+      if (valorInformado) {
+        let linha = document.createElement("li");
+        linha.textContent = valorInformado;
+        document.getElementById("listaOriginal").appendChild(linha);
+
+        document.getElementById("valorInput").value = "";
+        listaValoresAdicionados.push(parseInt(valorInformado));
+      }
+    }
+
+    function ordenar() {
+      let selecionado = document.getElementById("opcoesOrdenar");
+      document.getElementById("listaOriginal").innerHTML =
+        "Ordenação " + selecionado.options[selecionado.selectedIndex].text;
+
+      let opcaoSelecionada = selecionado.value;
+      if (opcaoSelecionada == 1) {
+        var listaOrdenada = bubbleSort(listaValoresAdicionados);
+        for (let index = 0; index < listaOrdenada.length; index++) {
+          ordenacao(listaOrdenada[index]);
+        }
+      } else if (opcaoSelecionada == 2) {
+        var listaOrdenada = quicksort(listaValoresAdicionados);
+        for (let index = 0; index < listaOrdenada.length; index++) {
+          ordenacao(listaOrdenada[index]);
+        }
+      } else if (opcaoSelecionada == 3) {
+        var listaOrdenada = selectionSort(listaValoresAdicionados);
+        for (let index = 0; index < listaOrdenada.length; index++) {
+          ordenacao(listaOrdenada[index]);
+        }
+      }
+    }
+    //ordenação
+    function ordenacao(valor) {
+      let linha = document.createElement("li");
+      linha.textContent = valor;
+      document.getElementById("listaOriginal").appendChild(linha);
+    }
+
+    function embaralhar() {
+      let listaEmbaralhada = shuffleArray(listaValoresAdicionados);
+      apagar();
+      let listaOriginal = document.getElementById("listaOriginal");
+      listaOriginal.innerHTML = "Embaralhar";
+
+      for (let i = 0; i < listaEmbaralhada.length; i++) {
+        let linha = document.createElement("li");
+        linha.textContent = listaEmbaralhada[i];
+        listaOriginal.appendChild(linha);
+      }
+    }
+
+    function apagar() {
+      let listaOriginal = document.getElementById("listaOriginal");
+      while (listaOriginal.firstChild) {
+        listaOriginal.removeChild(listaOriginal.firstChild);
+      }
+    }
+    // Funções de Ordenação
+
+    // https://pt.stackoverflow.com/questions/478167/ordenando-arrays-com-bubble-sort
+    function bubbleSort(array) {
+      let arrayRetorno = array;
+      for (let i = 0; i < arrayRetorno.length; i++) {
+        for (let j = i + 1; j < arrayRetorno.length; j++) {
+          if (arrayRetorno[i] > arrayRetorno[j]) {
+            let aux = arrayRetorno[i];
+            arrayRetorno[i] = arrayRetorno[j];
+            arrayRetorno[j] = aux;
+          }
+        }
+      }
+      return arrayRetorno;
+    }
+
+    //https://stackoverflow.com/questions/5185864/javascript-quicksort
+    function quicksort(array) {
+      if (array.length <= 1) {
+        return array;
+      }
+
+      var pivot = array[0];
+      var left = [];
+      var right = [];
+
+      for (var i = 1; i < array.length; i++) {
+        array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+      }
+      return quicksort(left).concat(pivot, quicksort(right));
+    }
+
+    //https://stackoverflow.com/questions/22898928/selection-sort-in-javascript
+    function selectionSort(array) {
+      for (var i = 0; i < array.length; i++) {
+        //set min to the current iteration of i
+        var min = i;
+        for (var j = i + 1; j < array.length; j++) {
+          if (array[j] < array[min]) {
+            min = j;
+          }
+        }
+        var temp = array[i];
+        array[i] = array[min];
+        array[min] = temp;
+      }
+      return array;
+    }
+
+    // Função de Embaralhar
+    //https://horadecodar.com.br/como-embaralhar-um-array-em-javascript-shuffle/
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+  </script>
+
+</body>
+
+</html>

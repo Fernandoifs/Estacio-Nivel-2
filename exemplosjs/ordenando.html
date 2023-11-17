@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar à Lista</title>
+    <link rel="stylesheet" href="styles.css" >
+    <script src="ordenando.js" defer></script>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>Lista de Valores</h1>
+
+            <input type="number" id="valorInput" placeholder="Insira um valor">
+            <button class="botao adicione" id="buttonAdicionar" onclick="adicionar()">Adicionar</button>
+
+            <select id="opcoesOrdenar">
+                <option value=1>Bubble Sort</option>
+                <option value=2>Quick Sort</option>
+                <option value=3>Selection Sort</option>
+            </select>
+
+            <button class="botao ordene" id="buttonOrdenar" onclick="ordenar()">Ordenar</button>
+
+        </div>
+        <div>
+            <button class="botao embaralhe" onclick="embaralhar()">Embaralhar</button>
+        </div>
+        <div style="display: -webkit-box;margin-top: 50px;">
+
+            <ul id="listaOriginal" style="margin-right: 100px;">Lista Original</ul>
+
+        </div>
+
+    </section>
+    
+</body>
+
+</html>

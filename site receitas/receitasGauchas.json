@@ -1,0 +1,83 @@
+{
+  "receitas_gauchas": [
+    {
+      "nome": "Maminha Assada",
+      "ingredientes": [
+        "Maminha",
+        "Mostarda",
+        "Sal a gosto",
+        "Acompanhamentos (farofa, vinagrete, pão com alho)"
+      ],
+      "instrucoes": "Passe mostarda na carne para que o sal segure na superfície, coloque o sal grosso, espete, enroloque com papel aluminio e na churrasqueira mantenha com brasa forte.Asse a carne até o ponto desejado. Sirva com os acompanhamentos.",
+      "imagem": "imagens/maminha.jpg"
+    },
+    {
+      "nome": "Feijoada",
+      "ingredientes": [
+        "Feijão preto",
+        "Carne de porco (linguiça, costela, orelha, pé)",
+        "Arroz",
+        "Couve manteiga",
+        "Farinha de mandioca",
+        "Laranja"
+      ],
+      "instrucoes": "Cozinhe o feijão preto com as carnes de porco até ficarem macias. Sirva com arroz, couve manteiga refogada, farinha de mandioca e laranja em rodelas.",
+      "imagem": "imagens/feijoada.jpg"
+    },
+    {
+      "nome": "Arroz de Carreteiro",
+      "ingredientes": [
+        "Carne de charque",
+        "Arroz",
+        "Cebola",
+        "Alho",
+        "Pimentão",
+        "Tomate",
+        "Temperos a gosto"
+      ],
+      "instrucoes": "Corte a carne de charque em pedaços pequenos e refogue com cebola, alho, pimentão e tomate. Acrescente o arroz e cozinhe até que esteja pronto. Tempere a gosto e sirva.",
+      "imagem": "imagens/carreteiro.jpg"
+    },
+    {
+      "nome": "Calça Virada",
+      "ingredientes": [
+        "2 ovos",
+        "1 xícara de açúcar",
+        "2 colheres de sopa de manteiga",
+        "1 xícara de leite",
+        "4 xícaras de farinha de trigo",
+        "1 colher de sopa de fermento em pó",
+        "1 colher de chá de sal",
+        "Óleo para fritar",
+        "Açúcar de confeiteiro para polvilhar"
+      ],
+      "instrucoes": "Bata os ovos, o açúcar e a manteiga até obter uma mistura cremosa. Adicione o leite, a farinha de trigo, o fermento em pó e o sal. Misture bem até formar uma massa homogênea. Abra a massa com um rolo em uma superfície enfarinhada até obter uma espessura de cerca de 1/2 centímetro. Corte a massa em tiras e faça um corte no centro de cada tira. Passe uma extremidade da tira pelo corte para formar uma espécie de nó. Frite em óleo quente até dourar. Escorra em papel toalha e polvilhe com açúcar de confeiteiro.",
+      "imagem": "imagens/calcavirada.jpg"
+    },
+    {
+      "nome": "Pé de Moleque",
+      "ingredientes": [
+        "500g de amendoim torrado e sem casca",
+        "2 xícaras de açúcar",
+        "1 xícara de melado de cana",
+        "1 colher de chá de bicarbonato de sódio"
+      ],
+      "instrucoes": "Em uma panela grande, misture o açúcar e o melado de cana. Cozinhe em fogo médio, mexendo ocasionalmente, até atingir o ponto de bala dura (cerca de 150°C). Retire do fogo e misture o bicarbonato de sódio (a mistura vai espumar). Adicione o amendoim torrado e misture bem. Despeje a mistura em uma forma untada e espalhe com uma espátula. Deixe esfriar completamente antes de quebrar em pedaços.",
+      "imagem": "imagens/pedemoleque.jpg"
+    },
+    {
+      "nome": "Cuca",
+      "ingredientes": [
+        "Farinha de trigo",
+        "Açúcar",
+        "Ovos",
+        "Banha ou manteiga",
+        "Fermento biológico",
+        "Frutas (geralmente, banana ou maçã)",
+        "Canela"
+      ],
+      "instrucoes": "Prepare uma massa com farinha de trigo, açúcar, ovos, banha ou manteiga e fermento biológico. Estenda a massa em uma forma, coloque as frutas por cima e polvilhe com açúcar e canela. Asse até dourar.",
+      "imagem": "imagens/cuca.jpg"
+    }
+  ]
+}
